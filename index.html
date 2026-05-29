@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yunus Emre — Aerospace Engineer & PhD Researcher specializing in Aeroelasticity, Structural Dynamics, and Computational Fluid Dynamics at Gebze Technical University." />
+  <meta name="keywords" content="aerospace engineer, PhD researcher, aeroelasticity, CFD, structural dynamics, flutter analysis, GTÜ" />
+  <meta name="author" content="Yunus Emre" />
+  <title>Yunus Emre | Aerospace Engineer & PhD Researcher</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">[</span>YE<span class="logo-bracket">]</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Research</a></li>
+        <li><a href="#skills" class="nav-link">Arsenal</a></li>
+        <li><a href="#beyond" class="nav-link">Beyond</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Connect</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────────────────── -->
+  <section id="hero" class="hero" aria-label="Hero section">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="mono">GEBZE TECHNICAL UNIVERSITY · GTÜ</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line" id="title-line-1">Aerospace</span>
+        <span class="title-line" id="title-line-2">Engineer</span>
+        <span class="title-line accent-line" id="title-line-3">PhD Researcher</span>
+      </h1>
+
+      <p class="hero-sub">
+        Specializing in <span class="highlight">Aeroelasticity</span>,
+        <span class="highlight">Structural Dynamics</span>, and
+        <span class="highlight">Computational Fluid Dynamics</span>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" id="hero-cta-research">View Research</a>
+        <a href="#contact" class="btn btn-ghost" id="hero-cta-connect">Connect</a>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span class="mono">SCROLL</span>
+      </div>
+    </div>
+
+    <!-- Floating technical overlay decorations -->
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-tag deco-tag-1 mono">Re = 2.4 × 10⁶</div>
+      <div class="deco-tag deco-tag-2 mono">M∞ = 0.72</div>
+      <div class="deco-tag deco-tag-3 mono">α = 4.2°</div>
+      <div class="deco-grid" id="deco-grid"></div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
+  <section id="about" class="about section" aria-label="About section">
+    <div class="container">
+
+      <div class="section-label mono reveal-up">
+        <span class="label-line"></span>
+        01 / ABOUT
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title reveal-up">The Researcher<br /><span class="accent">Behind the Math</span></h2>
+          <div class="about-body reveal-up">
+            <p>
+              I'm a <strong>PhD Student and Research Assistant</strong> at
+              <strong>Gebze Technical University (GTÜ)</strong>, where I develop
+              mathematical frameworks to push the boundaries of aeroelastic analysis.
+            </p>
+            <p>
+              My research centres on <strong>flutter analysis</strong> of flexible wing
+              structures, leveraging <strong>state-space formulations</strong> and the
+              <strong>Extended Galerkin Method (EGM)</strong> to model complex
+              fluid–structure interactions with unprecedented accuracy.
+            </p>
+            <p>
+              I believe the future of aerospace lies at the intersection of
+              rigorous mathematical modelling and computational power —
+              and that's exactly where I work.
+            </p>
+          </div>
+
+          <div class="about-tags reveal-up">
+            <span class="tag">PhD Candidate</span>
+            <span class="tag">Research Assistant</span>
+            <span class="tag">GTÜ · Gebze</span>
+            <span class="tag">Aeroelasticity</span>
+            <span class="tag">State-Space Methods</span>
+          </div>
+        </div>
+
+        <div class="about-card-wrapper reveal-right">
+          <div class="glass-card about-card">
+            <div class="card-glow"></div>
+            <div class="about-stat-grid">
+              <div class="about-stat">
+                <span class="stat-num" data-target="4">0</span>
+                <span class="stat-label mono">Years Research</span>
+              </div>
+              <div class="about-stat">
+                <span class="stat-num" data-target="3">0</span>
+                <span class="stat-label mono">Active Projects</span>
+              </div>
+              <div class="about-stat">
+                <span class="stat-num" data-target="12">0</span>
+                <span class="stat-label mono">Tools Mastered</span>
+              </div>
+              <div class="about-stat">
+                <span class="stat-num" data-target="1">0</span>
+                <span class="stat-label mono">Publications</span>
+              </div>
+            </div>
+            <div class="focus-list">
+              <h3 class="focus-title mono">FOCUS AREAS</h3>
+              <ul role="list">
+                <li class="focus-item">
+                  <span class="focus-dot"></span>Flutter Analysis
+                </li>
+                <li class="focus-item">
+                  <span class="focus-dot"></span>Aeroelastic Modelling
+                </li>
+                <li class="focus-item">
+                  <span class="focus-dot"></span>Extended Galerkin Method
+                </li>
+                <li class="focus-item">
+                  <span class="focus-dot"></span>State-Space Formulations
+                </li>
+                <li class="focus-item">
+                  <span class="focus-dot"></span>DEP Wing Structures
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─────────────────────────────────────────────── -->
+  <section id="projects" class="projects section" aria-label="Projects and research section">
+    <div class="container">
+
+      <div class="section-label mono reveal-up">
+        <span class="label-line"></span>
+        02 / RESEARCH &amp; PROJECTS
+      </div>
+
+      <h2 class="section-title reveal-up">
+        Work That<br /><span class="accent">Moves the Field</span>
+      </h2>
+
+      <div class="projects-grid">
+
+        <!-- Card 1: TÜBİTAK -->
+        <article class="project-card tilt-card" id="project-tubitak" tabindex="0" aria-label="TÜBİTAK Project">
+          <div class="project-card-inner">
+            <div class="project-card-top">
+              <div class="project-type mono">TÜBİTAK · 223M205</div>
+              <div class="project-status">
+                <span class="status-dot active"></span>
+                <span class="mono">ACTIVE</span>
+              </div>
+            </div>
+            <h3 class="project-title">Aeroelastic Analysis of Distributed Electric Propulsion Wings</h3>
+            <p class="project-desc">
+              Leading aeroelastic modelling for next-generation DEP wing configurations.
+              Investigating flutter boundaries, dynamic instabilities, and structural
+              responses under coupled aerodynamic–elastic loading for novel electric aircraft.
+            </p>
+            <div class="project-tags">
+              <span class="ptag">DEP Wings</span>
+              <span class="ptag">Flutter</span>
+              <span class="ptag">Aeroelasticity</span>
+              <span class="ptag">EGM</span>
+            </div>
+            <div class="project-footer">
+              <span class="mono project-org">TÜBİTAK — National Science Foundation TR</span>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+        <!-- Card 2: ASME IMECE -->
+        <article class="project-card tilt-card" id="project-asme" tabindex="0" aria-label="ASME IMECE 2025 Publication">
+          <div class="project-card-inner">
+            <div class="project-card-top">
+              <div class="project-type mono">ASME IMECE · 2025</div>
+              <div class="project-status">
+                <span class="status-dot complete"></span>
+                <span class="mono">PUBLISHED</span>
+              </div>
+            </div>
+            <h3 class="project-title">Aeroelastic analysis of flexible wings with distributed electric propulsion</h3>
+            <p class="project-desc">
+              <strong>Authors:</strong> Doğru, Y. E., Küçükali, M., Eken, A., &amp; Eken, S.<br/><br/>
+              Accepted for presentation and publication at the ASME International Mechanical Engineering Congress and Exposition.
+            </p>
+            <div class="project-tags">
+              <span class="ptag">Publication</span>
+              <span class="ptag">ASME IMECE 2025</span>
+              <span class="ptag">Aeroelasticity</span>
+              <span class="ptag">DEP</span>
+            </div>
+            <div class="project-footer">
+              <span class="mono project-org">ASME International</span>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+        <!-- Card 3: IFASD 2026 -->
+        <article class="project-card tilt-card" id="project-ifasd" tabindex="0" aria-label="IFASD 2026 Publication">
+          <div class="project-card-inner">
+            <div class="project-card-top">
+              <div class="project-type mono">IFASD · 2026</div>
+              <div class="project-status">
+                <span class="status-dot upcoming"></span>
+                <span class="mono">UPCOMING</span>
+              </div>
+            </div>
+            <h3 class="project-title">Comparative Aeroelastic Analysis of Distributed Electric Propulsion Wings</h3>
+            <p class="project-desc">
+              <strong>Authors:</strong> Doğru, Y. E., Eken, A., &amp; Eken, S.<br/><br/>
+              Accepted for the International Forum on Aeroelasticity and Structural Dynamics (IFASD 2026) in Goettingen, Germany.
+            </p>
+            <div class="project-tags">
+              <span class="ptag">Publication</span>
+              <span class="ptag">IFASD 2026</span>
+              <span class="ptag">Aeroelasticity</span>
+              <span class="ptag">DEP</span>
+            </div>
+            <div class="project-footer">
+              <span class="mono project-org">IFASD</span>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+        <!-- Card 4: Power Automate -->
+        <article class="project-card tilt-card" id="project-automate" tabindex="0" aria-label="Digital Approval Automation Project">
+          <div class="project-card-inner">
+            <div class="project-card-top">
+              <div class="project-type mono">AUTOMATION · DEVOPS</div>
+              <div class="project-status">
+                <span class="status-dot complete"></span>
+                <span class="mono">DELIVERED</span>
+              </div>
+            </div>
+            <h3 class="project-title">Digital Approval System — Teams &amp; Power Automate</h3>
+            <p class="project-desc">
+              Engineered an end-to-end digital document approval workflow integrating
+              Microsoft Teams and Power Automate. Reduced manual approval cycles, increased
+              traceability, and introduced automated notifications and audit logging.
+            </p>
+            <div class="project-tags">
+              <span class="ptag">Power Automate</span>
+              <span class="ptag">MS Teams</span>
+              <span class="ptag">Workflow</span>
+              <span class="ptag">Automation</span>
+            </div>
+            <div class="project-footer">
+              <span class="mono project-org">Internal R&amp;D — GTÜ</span>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS / TECHNICAL ARSENAL ───────────────────────────── -->
+  <section id="skills" class="skills section" aria-label="Technical skills section">
+    <div class="container">
+
+      <div class="section-label mono reveal-up">
+        <span class="label-line"></span>
+        03 / TECHNICAL ARSENAL
+      </div>
+
+      <h2 class="section-title reveal-up">
+        Tools of the<br /><span class="accent">Trade</span>
+      </h2>
+
+      <div class="skills-marquee-wrap" aria-hidden="true">
+        <div class="skills-marquee" id="skills-marquee">
+          <div class="skills-track" id="skills-track">
+            <!-- Items injected by JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-grid reveal-up">
+        <div class="skill-category">
+          <h3 class="skill-cat-title mono">SIMULATION &amp; FEA</h3>
+          <div class="skill-items">
+            <div class="skill-item"><span class="skill-bar" data-w="92"></span><span>ANSYS MAPDL</span><span class="skill-pct mono">92%</span></div>
+            <div class="skill-item"><span class="skill-bar" data-w="88"></span><span>MSC Nastran</span><span class="skill-pct mono">88%</span></div>
+            <div class="skill-item"><span class="skill-bar" data-w="85"></span><span>MSC Patran</span><span class="skill-pct mono">85%</span></div>
+            <div class="skill-item"><span class="skill-bar" data-w="80"></span><span>ANSYS DesignModeler</span><span class="skill-pct mono">80%</span></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-cat-title mono">MATHEMATICAL &amp; CODING</h3>
+          <div class="skill-items">
+            <div class="skill-item"><span class="skill-bar" data-w="95"></span><span>MATLAB</span><span class="skill-pct mono">95%</span></div>
+            <div class="skill-item"><span class="skill-bar" data-w="88"></span><span>Mathematica</span><span class="skill-pct mono">88%</span></div>
+            <div class="skill-item"><span class="skill-bar" data-w="75"></span><span>Python (NumPy/SciPy)</span><span class="skill-pct mono">75%</span></div>
+            <div class="skill-item"><span class="skill-bar" data-w="70"></span><span>Power Automate</span><span class="skill-pct mono">70%</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── BEYOND THE LAB ────────────────────────────────────────── -->
+  <section id="beyond" class="beyond section" aria-label="Personal interests section">
+    <div class="container">
+
+      <div class="section-label mono reveal-up">
+        <span class="label-line"></span>
+        04 / BEYOND THE LAB
+      </div>
+
+      <h2 class="section-title reveal-up">
+        Precision &amp;<br /><span class="accent">Performance</span>
+      </h2>
+
+      <p class="beyond-intro reveal-up">
+        The same instinct for data, feedback loops, and marginal gains that drives
+        my research shows up everywhere else in life.
+      </p>
+
+      <div class="beyond-grid">
+
+        <div class="beyond-card tilt-card reveal-up" id="beyond-iracing">
+          <div class="beyond-icon-wrap">
+            <svg class="beyond-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 32 Q20 20 32 20 Q44 20 52 32 Q44 44 32 44 Q20 44 12 32Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.3"/>
+              <path d="M32 8V20 M32 44V56 M8 32H20 M44 32H56" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="beyond-title">iRacing — Sim Racing</h3>
+          <p class="beyond-desc">
+            Competing in the <strong>Porsche Cup</strong> series on iRacing.
+            Lap data analysis, tyre degradation models, and setup engineering —
+            motorsport engineering meets aerospace methodology.
+          </p>
+          <div class="beyond-tag mono">PORSCHE CUP · DATA DRIVEN</div>
+        </div>
+
+        <div class="beyond-card tilt-card reveal-up" id="beyond-tennis" style="--delay: 0.15s">
+          <div class="beyond-icon-wrap">
+            <svg class="beyond-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 20 Q32 14 54 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M10 44 Q32 50 54 44" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M18 10 Q14 32 18 54" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M46 10 Q50 32 46 54" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="beyond-title">Competitive Tennis</h3>
+          <p class="beyond-desc">
+            A competitive player who applies the same analytical mindset to the court —
+            tracking patterns, exploiting opponent tendencies, and optimising
+            biomechanics for peak performance.
+          </p>
+          <div class="beyond-tag mono">COMPETITIVE · ANALYTICAL</div>
+        </div>
+
+        <div class="beyond-card tilt-card reveal-up" id="beyond-auto" style="--delay: 0.3s">
+          <div class="beyond-icon-wrap">
+            <svg class="beyond-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="24" width="48" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 24 L22 12 H42 L48 24" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="18" cy="44" r="6" stroke="currentColor" stroke-width="2"/>
+              <circle cx="46" cy="44" r="6" stroke="currentColor" stroke-width="2"/>
+              <rect x="28" y="28" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="beyond-title">DIY Automotive Diagnostics</h3>
+          <p class="beyond-desc">
+            OBD-II data logging, ECU parameter analysis, and hands-on mechanical
+            troubleshooting. Engineering principles applied to real machinery — because
+            understanding systems is a lifestyle, not just a career.
+          </p>
+          <div class="beyond-tag mono">OBD-II · ECU · SYSTEMS</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ───────────────────────────────────────────────── -->
+  <section id="contact" class="contact section" aria-label="Contact section">
+    <div class="container">
+
+      <div class="section-label mono reveal-up">
+        <span class="label-line"></span>
+        05 / CONNECT
+      </div>
+
+      <h2 class="section-title reveal-up">
+        Let's Build<br /><span class="accent">Something Significant</span>
+      </h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal-left">
+          <p class="contact-intro">
+            Whether it's a research collaboration, an academic discussion, or an
+            industry opportunity — I'm always open to conversations that push
+            the envelope.
+          </p>
+
+          <div class="contact-links">
+            <a href="#" class="contact-link" id="link-publications" aria-label="Academic Publications">
+              <span class="contact-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </span>
+              <span>Academic Publications</span>
+              <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link" id="link-linkedin" aria-label="LinkedIn Profile">
+              <span class="contact-link-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </span>
+              <span>LinkedIn Profile</span>
+              <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+
+            <a href="#" class="contact-link btn-download" id="link-cv" aria-label="Download CV">
+              <span class="contact-link-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </span>
+              <span>Download CV</span>
+              <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form glass-card" id="contact-form" novalidate aria-label="Contact form">
+            <div class="card-glow"></div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label mono">NAME</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label mono">EMAIL</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label mono">SUBJECT</label>
+              <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Research collaboration, question..." autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label mono">MESSAGE</label>
+              <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Tell me about your project or idea..." required rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </span>
+              <span class="btn-ripple"></span>
+            </button>
+
+            <p class="form-note mono" id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-logo mono">[YE] · Yunus Emre</div>
+      <p class="footer-copy mono">© 2025 — PhD Researcher · GTÜ Aerospace</p>
+      <div class="footer-coords mono">40.8°N 29.4°E · GEBZE, TR</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/hero3d.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
