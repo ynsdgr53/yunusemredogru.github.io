@@ -526,11 +526,11 @@
     wingGroup.position.z = mouse.x * 0.15;
     
     // Corrected flight dynamics orientation (Wing extruded along Z-axis):
-    // Pitch (Angle of Attack α) = rotation around Z-axis
+    // Pitch (Angle of Attack α) = rotation around Z-axis (inverted to pitch leading edge UP)
     // Yaw = rotation around Y-axis
     // Roll = rotation around X-axis
     const alphaRad = (state.alpha * Math.PI) / 180;
-    wingGroup.rotation.z = alphaRad + mouse.y * 0.06; // Pitch (AoA)
+    wingGroup.rotation.z = -alphaRad - mouse.y * 0.06; // Pitch (AoA)
     wingGroup.rotation.y = -0.4 + mouse.x * 0.18 + scrollProgress * 0.6; // Yaw
     wingGroup.rotation.x = 0.05 + mouse.x * 0.06; // Roll (slight banking)
 
